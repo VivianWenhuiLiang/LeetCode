@@ -8,7 +8,11 @@ package com.vivian.java.leetcode;
  */
 public class Q28_strStr {
     public int strStr(String haystack, String needle) {
-        // TODO implement this
-        return 0;
+        for(int i=0;i<haystack.length();i++){
+            if(haystack.charAt(i)==needle.charAt(0)){
+                return i;
+            }
+        }
+        return -1;
     }
 }
