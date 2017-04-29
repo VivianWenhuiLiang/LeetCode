@@ -22,5 +22,25 @@ package com.vivian.java.leetcode;
  * Input: "FlaG" Output: False
  */
 public class Q520_DetectCapital {
+    public boolean detectCapital(String str) {
+        boolean c = isCapital(str.charAt(0));
+        for (int i = 0; i < str.length(); i++) {
+            if (c == true && !isCapital(str.charAt(i))) {
+                if (i == 1) {
+                    c = false;
+                    continue;
+                } else {
+                    return false;
+                }
+            }
+            if (c == false && isCapital(str.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
 
+    boolean isCapital(char c) {
+        return ('Z' >= c && c >= 'A');
+    }
 }
