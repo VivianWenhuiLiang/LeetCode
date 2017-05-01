@@ -13,5 +13,29 @@ package com.vivian.java.leetcode;
  * canConstruct("aa", "aab") -> true
  */
 public class Q383_RansomNote {
+    public boolean ransonNote(String mag, String str) {
+        if (mag == null || str == null) {
+            return false;
+        }
+        if (mag.length() > str.length()) {
+            return false;
+        }
+        int count = 0;
+        for (int i = 0; i < str.length() - mag.length(); i++) {
+            if (match(str, i, mag)) {
+                count++;
+            }
+        }
+        return (count == 1);
+    }
+
+    public boolean match(String str, int start, String mag) {
+        for (int i = 0; i < mag.length(); i++) {
+            if (str.charAt(i + start) != mag.charAt(i)) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 }
