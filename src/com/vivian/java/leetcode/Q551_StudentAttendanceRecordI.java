@@ -21,5 +21,23 @@ package com.vivian.java.leetcode;
  * Input: "PPALLL" Output: False
  */
 public class Q551_StudentAttendanceRecordI {
+    public boolean beRewarded(String str) {
+        if (str == null || str.isEmpty()) {
+            return false;
+        }
+        int countA = 0;
+        int countL = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'A') {
+                countA++;
+            } else if (str.charAt(i) == 'L') {
+                countL++;
+            }
 
+        }
+        if (countA <= 1 && countL <= 2) {
+            return true;
+        }
+        return false;
+    }
 }
