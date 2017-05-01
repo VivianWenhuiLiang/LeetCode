@@ -17,5 +17,23 @@ package com.vivian.java.leetcode;
  * and k will in the range [1, 10000]
  */
 public class Q541_ReverseStringII {
+    public String reverseStringII(String str, int k) {
+        StringBuilder sb = new StringBuilder(str);
+        if (str == null || str.isEmpty()) {
+            return null;
+        }
+        for (int i = 0; i < str.length(); i += 2 * k) {
+            reverse(sb, i, Math.min(str.length(), i + k));
+        }
+        return sb.toString();
+    }
 
+    public StringBuilder reverse(StringBuilder str, int start, int end) {
+        for (int i = start, j = end - 1; i < j; i++, j--) {
+            char temp = str.charAt(i);
+            str.setCharAt(i, str.charAt(j));
+            str.setCharAt(j, temp);
+        }
+        return str;
+    }
 }
