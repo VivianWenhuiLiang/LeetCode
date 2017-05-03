@@ -14,5 +14,6 @@ public class Q14_LongestCommonPrefixTest {
     public void test() {
         Assert.assertEquals("ab", solution.longestCommonPrefix(new String[] { "abab", "aba", "abc" }));
         Assert.assertEquals("", solution.longestCommonPrefix(new String[] { "a", "b", "c" }));
+        Assert.assertEquals("ab", solution.longestCommonPrefix(new String[] { "abc", "abc", "ab" }));
     }
 }
