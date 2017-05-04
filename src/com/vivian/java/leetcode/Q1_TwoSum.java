@@ -1,6 +1,7 @@
 package com.vivian.java.leetcode;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Given an array of integers, return indices of the two numbers such that they
@@ -20,7 +21,7 @@ public class Q1_TwoSum {
         if (nums == null) {
             return null;
         }
-        HashMap<Integer, Integer> hs = new HashMap<>();
+        Map<Integer, Integer> hs = new HashMap<>();
         int[] result = new int[2];
         for (int i = 0; i < nums.length; i++) {
             if (hs.containsKey(target - nums[i])) {

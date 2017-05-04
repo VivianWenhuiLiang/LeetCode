@@ -14,5 +14,7 @@ public class Q1_TwoSumTest {
     public void test() {
         Assert.assertArrayEquals(new int[] { 0, 1 }, solution.twoSum(new int[] { 2, 7, 11, 15 }, 9));
         Assert.assertArrayEquals(new int[] { 1, 2 }, solution.twoSum(new int[] { 2, 7, 11, 15 }, 18));
+        Assert.assertArrayEquals(null, solution.twoSum(new int[] { 2, 7, 11, 15 }, 20));
+        Assert.assertArrayEquals(null, solution.twoSum(new int[] { 2, 7, 11, 15 }, 14));
     }
 }
