@@ -1,5 +1,7 @@
 package com.vivian.java.leetcode;
 
+import java.util.HashMap;
+
 /**
  * Given an array of integers, return indices of the two numbers such that they
  * add up to a specific target.
@@ -14,5 +16,23 @@ package com.vivian.java.leetcode;
  * Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].
  */
 public class Q1_TwoSum {
+    public int[] twoSum(int[] nums, int target) {
+        if (nums == null) {
+            return null;
+        }
+        HashMap<Integer, Integer> hs = new HashMap<>();
+        int[] result = new int[2];
+        for (int i = 0; i < nums.length; i++) {
+            if (hs.containsKey(target - nums[i])) {
+                result[0] = hs.get(target - nums[i]);
+                result[1] = i;
+                return result;
+            } else {
+                hs.put(nums[i], i);
+            }
+
+        }
+        return null;
+    }
 
 }
