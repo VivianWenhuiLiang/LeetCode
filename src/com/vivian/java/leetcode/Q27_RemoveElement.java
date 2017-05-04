@@ -16,5 +16,22 @@ package com.vivian.java.leetcode;
  * being 2.
  */
 public class Q27_RemoveElement {
+    public int removeElement(int[] nums, int val) {
+        if (nums.length == 1) {
+            if (nums[0] != val) {
+                return 1;
+            }
+            return 0;
+        }
+
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                nums[index] = nums[i];
+                index++;
+            }
+        }
+        return index;
+    }
 
 }
