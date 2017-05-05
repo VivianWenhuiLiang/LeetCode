@@ -22,5 +22,9 @@ package com.vivian.java.leetcode;
  * subsequence of any other strings in the group of two strings.
  */
 public class Q521_LongestUncommonSubsequenceI {
+    public int longestUncommonSubsequenceI(String s1, String s2) {
+        return s1.equals(s2) ? -1 : Math.max(s1.length(), s2.length());
+
+    }
 
 }
