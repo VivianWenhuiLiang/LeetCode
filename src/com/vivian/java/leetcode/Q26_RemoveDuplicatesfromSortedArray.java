@@ -14,5 +14,19 @@ package com.vivian.java.leetcode;
  * length.
  */
 public class Q26_RemoveDuplicatesfromSortedArray {
+    public int removeDuplicatesfromSortedArray(int[] nums, int len) {
+        if (len == 1) {
+            return 1;
+        }
+        int index = 1;// place may has duplicate and the place which next
+                      // unduplicate fit in
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) {
+                nums[index] = nums[i];
+                index++;
+            }
+        }
+        return index;
 
+    }
 }
