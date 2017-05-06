@@ -18,9 +18,15 @@ public class Q35_SearchInsertPosition {
         if (arr.length == 0) {
             return -1;
         }
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0, j = arr.length - 1; i < j; i++, j--) {
             if (arr[i] >= val) {
                 return i;
+            }
+            if (arr[j] < val) {
+                return j + 1;
+            }
+            if (arr[j] == val) {
+                return j;
             }
         }
         return arr.length;
