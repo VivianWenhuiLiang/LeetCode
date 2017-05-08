@@ -10,5 +10,21 @@ package com.vivian.java.leetcode;
  * same time (ie, you must sell the stock before you buy again).
  */
 public class Q122_BestTimetoBuyandSellStockII {
+    public int bestTimetoBuyandSellStockII(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int total_earn = 0;
+        int buy = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[buy] > nums[i]) {
+                buy = i;
+            } else {
+                total_earn += nums[i] - nums[buy];
+                buy = i;
+            }
+        }
+        return total_earn;
+    }
 
 }
