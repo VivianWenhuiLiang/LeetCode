@@ -9,5 +9,18 @@ package com.vivian.java.leetcode;
  * elements initialized in nums1 and nums2 are m and n respectively.
  */
 public class Q88_MergeSortedArray {
+    public int[] mergeSortedArray(int[] nums1, int m, int[] nums2, int n) {
+        int length = m + n - 1;
+        int j, i;
+        for (i = m - 1, j = n - 1; i >= 0 && j >= 0;) {
+            nums1[length] = nums1[i] > nums2[j] ? nums1[i--] : nums2[j--];
+            length--;
+        }
+        while (j >= 0) {
+            nums1[length--] = nums2[j--];
+        }
+        return nums1;
+
+    }
 
 }
