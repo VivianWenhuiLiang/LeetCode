@@ -13,5 +13,21 @@ package com.vivian.java.leetcode;
  * total number of operations.
  */
 public class Q283_MoveZeroes {
-
+    public int[] moveZeroes(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+        int k = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[k] = nums[i];
+                k++;
+            }
+        }
+        while (k < nums.length) {
+            nums[k] = 0;
+            k++;
+        }
+        return nums;
+    }
 }
