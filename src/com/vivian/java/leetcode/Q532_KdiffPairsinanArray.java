@@ -1,5 +1,8 @@
 package com.vivian.java.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Given an array of integers and an integer k, you need to find the number of
  * unique k-diff pairs in the array. Here a k-diff pair is defined as an integer
@@ -32,5 +35,36 @@ package com.vivian.java.leetcode;
  * </pre>
  */
 public class Q532_KdiffPairsinanArray {
+	// assume this program imput [3,3,3,3,2] ,k=0,should return 1
+	public int kDiffPairsInAnArray(int[] nums, int k) {
+		if (nums == null || nums.length < 0 || k < 0) {
+			return 0;
+		}
+		Map<Integer, Integer> map = new HashMap<>();
+		int count = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (map.containsKey(nums[i])) {
+				map.put(nums[i], map.get(nums[i]) + 1);
+			} else {
+				map.put(nums[i], 1);
+			}
+		}
+		for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
 
+			if (k == 0) {
+				if (entry.getValue() >= 2) {
+					++count;
+				}
+			}
+
+			else {
+
+				if (map.containsKey(entry.getKey() + k)) {
+					count++;
+				}
+			}
+
+		}
+		return count;
+	}
 }
