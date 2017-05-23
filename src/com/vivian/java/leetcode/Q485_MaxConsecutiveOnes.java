@@ -16,5 +16,22 @@ package com.vivian.java.leetcode;
  * a positive integer and will not exceed 10,000
  */
 public class Q485_MaxConsecutiveOnes {
+	public int maxConsecutiveOnes(int nums[]) {
+		if (nums == null || nums.length == 0) {
+			return -1;
+		}
+		int count = 0;
+		int maxOnes = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 0) {
+				maxOnes = Math.max(count, maxOnes);
+				count = 0;
+			} else {
+				count++;
+				maxOnes = Math.max(count, maxOnes);
+			}
+		}
+		return maxOnes;
+	}
 
 }
