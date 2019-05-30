@@ -26,5 +26,36 @@ package com.vivian.java.leetcode;
  * </pre>
  */
 public class Q414_ThirdMaximumNumber {
+	public int thirdMaximumNumber(int nums[]) {
+		if (nums == null || nums.length == 0) {
+			return 000;
+		} else if (nums.length == 1) {
+			return nums[0];
+		} else if (nums.length == 2) {
+			return nums[0] > nums[1] ? nums[0] : nums[1];
+		} else {
+			Integer first_Max = Integer.MIN_VALUE;
+			Integer second_Max = Integer.MIN_VALUE;
+			Integer third_Max = Integer.MIN_VALUE;
+			for (int i = 0; i < nums.length; i++) {
+				if (nums[i] == first_Max || nums[i] == second_Max || nums[i] == third_Max) {
+					continue;
+				}
+				if (nums[i] > first_Max) {
+					third_Max = second_Max;
+					second_Max = first_Max;
+					first_Max = nums[i];
+
+				} else if (nums[i] > second_Max) {
+					third_Max = second_Max;
+					second_Max = nums[i];
+
+				} else if (nums[i] > third_Max) {
+					third_Max = nums[i];
+				}
+			}
+			return third_Max;
+		}
+	}
 
 }
