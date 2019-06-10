@@ -39,7 +39,7 @@ public class CCI2_4SumOflinkedlists {
                 carry = 0;
             }
             Node node = new Node<Integer>(sum, null);
-            if(tail == null) {
+            if(tail == null) {//the head of the linkedlist3
                 result = node;
             } else {
                 tail.setNext(node);
