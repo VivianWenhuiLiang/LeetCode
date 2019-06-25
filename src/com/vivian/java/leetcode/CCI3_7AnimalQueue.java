@@ -1,5 +1,5 @@
 package com.vivian.java.leetcode;
-
+import com.vivian.java.collections.Queue;
 import com.vivian.java.collections.LinkedList;
 /* An anomal shelter operates on "FIFO" basis
 People most adopt either the "oldest"(based on arrival time)
@@ -15,17 +15,17 @@ approach: create a variable to record animal's arrival number
 
 */
 public class CCI3_7AnimalQueue {
-    LinkedList<Dog> dogs = new LinkedList<>();
-    LinkedList<Cat> cats = new LinkedList<>();
+    Queue<Dog> dogs = new LinkedList<>();
+    Queue<Cat> cats = new LinkedList<>();
     private int order = 0;
 
     public void enqueue(Animal a) {
         order++;
         a.setOrder(order);
         if(a instanceof Dog) {
-            dogs.addLast((Dog)a);//a is super type need to forced type conversion
+            dogs.offer((Dog)a);//a is super type need to forced type conversion
         } else if(a instanceof Cat) {
-            cats.addLast((Cat)a);
+            cats.offer((Cat)a);
         }
     }
 
@@ -36,7 +36,7 @@ public class CCI3_7AnimalQueue {
         if(cats.isEmpty()) {
             return dequeueDog();
         }
-        if(cats.getFirst().getOrder() < dogs.getFirst().getOrder()) {
+        if(cats.peek().getOrder() < dogs.peek().getOrder()) {
             return dequeueCat();//number 0 is the oldest less number early arrived
         } else {
             return dequeueDog();

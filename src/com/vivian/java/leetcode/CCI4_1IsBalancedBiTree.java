@@ -33,8 +33,6 @@ public class CCI4_1IsBalancedBiTree {
         return Math.max(height(root.getLeft()), height(root.getRight())) + 1;
     }
 
-
-
     /*
     Approach 2: we use height() to check
     the node isBalanced as the same time check its height .
@@ -67,4 +65,3 @@ public class CCI4_1IsBalancedBiTree {
         }
     }
 }
-
