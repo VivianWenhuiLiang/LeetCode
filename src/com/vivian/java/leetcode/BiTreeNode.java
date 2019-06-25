@@ -18,10 +18,10 @@ public class BiTreeNode<T> {
     public void setData(T item) {
         data = item;
     }
-    public BiTreeNode<T> getLeftNode() {
+    public BiTreeNode<T> getLeft() {
         return left;
     }
-    public BiTreeNode<T> getRightNode() {
+    public BiTreeNode<T> getRight() {
         return right;
     }
 

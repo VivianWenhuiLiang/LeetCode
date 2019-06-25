@@ -53,12 +53,12 @@ public class CCI4_4BiTreeToLinkedListTest {
         }
     }
 
-    public boolean samelinkedList(LinkedList<TreeNode<Integer>> head1, LinkedList<TreeNode<Integer>>head2) {
+    public boolean linkedListEquals(LinkedList<TreeNode<Integer>> head1, LinkedList<TreeNode<Integer>>head2) {
         if(head2.size() != head1.size()) {
             return false;
         }
         while(!head1.isEmpty() && !head2.isEmpty()) {
-            if(head2.removeFirst() != head1.removeFirst()) {
+            if(!head2.removeFirst().equals(head1.removeFirst()) ){
                 return false;
             }
         }

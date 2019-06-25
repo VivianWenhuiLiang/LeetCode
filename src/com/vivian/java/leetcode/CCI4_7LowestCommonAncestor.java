@@ -17,37 +17,37 @@ Approach: if both nodes on the left side Recursively left to find the common asc
 complexity:o(n) since each node visited once
 
 */
-public class CCI4_7FirstCommAscentor {
-    public BiTreeNode<Integer> comAscentor(BiTreeNode<Integer> root, BiTreeNode<Integer>no1, BiTreeNode<Integer> no2) {
+public class CCI4_7LowestCommonAncestor {
+    public BiTreeNode<Integer> commAncestor(BiTreeNode<Integer> root, BiTreeNode<Integer>no1, BiTreeNode<Integer> no2) {
         if(!covers(root, no1) || !covers(root, no2)) { //ensure both nodes in the tree
             return null;
         }
-        return firstAscentor(root, no1, no2);
+        return firstAncestor(root, no1, no2);
     }
 
-    public BiTreeNode<Integer> firstAscentor(BiTreeNode<Integer>root,BiTreeNode<Integer>no1,BiTreeNode<Integer>no2){
-        if(root==null){
+    public BiTreeNode<Integer> firstAncestor(BiTreeNode<Integer>root, BiTreeNode<Integer>no1, BiTreeNode<Integer>no2) {
+        if(root == null) {
             return null;
         }
-        if(root==no1||root==no2){
+        if(root == no1 || root == no2) {
             return root;
         }
-        boolean no1_left=covers(root.getLeftNode(),no1);
-        boolean no2_left=covers(root.getLeftNode(),no2);
-        if(no1_left!=no2_left){
+        boolean no1_left = covers(root.getLeft(), no1);
+        boolean no2_left = covers(root.getLeft(), no2);
+        if(no1_left != no2_left) {
             return root;//they're in difference side,first node(ascentor to split no1 & no2)
         }
-        BiTreeNode<Integer> child_side=no1_left?root.getLeftNode():root.getRightNode();
-        return firstAscentor(child_side,no1,no2);
+        BiTreeNode<Integer> child_side = no1_left ? root.getLeft() : root.getRight();
+        return firstAncestor(child_side, no1, no2);
     }
 
-    public boolean covers(BiTreeNode<Integer> root,BiTreeNode<Integer> node){
-        if(root==null){
+    public boolean covers(BiTreeNode<Integer> root, BiTreeNode<Integer> node) {
+        if(root == null) {
             return false;
         }
-        if(root==node){
+        if(root == node) {
             return true;
         }
-        return covers(root.getLeftNode(),node)||covers(root.getRightNode(),node);
+        return covers(root.getLeft(), node) || covers(root.getRight(), node);
     }
 }

@@ -1,9 +1,9 @@
 package com.vivian.java.leetcode;
-import com.vivian.java.collections.ArrayList;
+import com.vivian.java.collections.List;
 
 public class TreeNode<T> {
     private T data;
-    private ArrayList<TreeNode<T>> child = new ArrayList<>();
+    private List<TreeNode<T>> child = new List<>();
 
     public TreeNode(T data) {
         this.data = data;
@@ -17,7 +17,7 @@ public class TreeNode<T> {
         this.data = data;
     }
 
-    public ArrayList<TreeNode<T>> getChild() {
+    public List<TreeNode<T>> getChild() {
         return child;
     }
 }

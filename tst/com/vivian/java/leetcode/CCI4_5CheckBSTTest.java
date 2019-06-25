@@ -15,12 +15,7 @@ public class CCI4_5CheckBSTTest {
     BiTreeNode<Integer>n6 = new BiTreeNode<>(6, n5, n7);
     BiTreeNode<Integer>n2 = new BiTreeNode<>(2, n1, n3);
     BiTreeNode<Integer>n4 = new BiTreeNode<>(4, n2, n6);
-
-
-
-
-
-
+    
     @Test
     public void test() {
         Assert.assertFalse(solution.checkBST(n4));

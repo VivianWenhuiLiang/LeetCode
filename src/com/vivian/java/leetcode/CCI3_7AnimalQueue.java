@@ -51,8 +51,6 @@ public class CCI3_7AnimalQueue {
         return cats.poll();
     }
 
-
-
     public static class Animal {
         private int order;
         protected String name;

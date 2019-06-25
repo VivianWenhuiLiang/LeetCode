@@ -1,4 +1,5 @@
 package com.vivian.java.leetcode;
+import java.lang.IllegalArgumentException;
 /* assume you have a method is Substring which one word is a substring of another.
   Give two strings, S1 and S2,write code to check if S2 is rotation of S1,using Only one call to isSubstring
   (eg: waterbottle is a rotation of erbottlewat )
@@ -20,7 +21,7 @@ public class CC1_8_isRotation {
 
     public boolean isSubstring(String s1, String s2) {
         if(s1.length() < s2.length() || s1.length() == 0 || s2.length() == 0) {
-            return false;
+            throw new IllegalArgumentException();
         }
         int j;
         for(int i = 0; i <= s1.length() - s2.length(); i++) {

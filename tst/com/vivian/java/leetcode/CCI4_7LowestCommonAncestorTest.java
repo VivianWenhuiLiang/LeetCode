@@ -3,8 +3,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
-public class CCI4_7FirstCommAscentorTest {
-    CCI4_7FirstCommAscentor solution = new CCI4_7FirstCommAscentor();
+public class CCI4_7LowestCommonAncestorTest {
+    CCI4_7LowestCommonAncestor solution = new CCI4_7LowestCommonAncestor();
     BiTreeNode<Integer>n4 = new BiTreeNode<>(4, null, null);
     BiTreeNode<Integer>n5 = new BiTreeNode<>(5, null, null);
     BiTreeNode<Integer>n2 = new BiTreeNode<>(3, n4, n5);
@@ -25,8 +25,8 @@ public class CCI4_7FirstCommAscentorTest {
     
     @Test
     public void test() {
-        Assert.assertEquals(n2,solution.comAscentor(n1,n4,n5));
-        Assert.assertEquals(a,solution.comAscentor(a,p,q));
-        Assert.assertEquals(no2,solution.comAscentor(no1,no2,no4));
+        Assert.assertEquals(n2,solution.commAncestor(n1,n4,n5));
+        Assert.assertEquals(a,solution.commAncestor(a,p,q));
+        Assert.assertEquals(no2,solution.commAncestor(no1,no2,no4));
     }
 }

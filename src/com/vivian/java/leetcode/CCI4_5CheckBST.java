@@ -31,8 +31,6 @@ public class CCI4_5CheckBST {
         return checkBST(root.getLeftNode(), min, root.getData()) &&
                checkBST(root.getRightNode(), root.getData(), max);
     }
-
-
 }
 
 

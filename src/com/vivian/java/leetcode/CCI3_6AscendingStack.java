@@ -5,7 +5,8 @@ You may use at most one additional stack to hold items,
 but you may not copy the elements into any other data structure.
 Tht stack supports  supports the following operations:push,pop,peek,and isEmpty.
 
-claritification: ascending ording such as 54321
+claritification: should be the bottom of stack holds the minimum value?(yes)
+                 bottom->top: 12345
                  use one additional stack
 approach: when support stack isEmpty,it can push element original stack pop
          need two while loop ,outer while for original stack pop,support stack push
